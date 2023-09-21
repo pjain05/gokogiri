@@ -5,6 +5,7 @@ env:
   testid: '13033948'
   ContinuePipeline: 'false'
   showtaillog: 'false'
+  inputstartfile: "abc.txt"
 
 'on': push
 jobs:
