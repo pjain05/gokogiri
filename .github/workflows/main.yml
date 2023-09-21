@@ -20,6 +20,4 @@ jobs:
           testid: '${{env.testid}}'
           ContinuePipeline: '${{env.ContinuePipeline}}'
           showtaillog: '${{env.showtaillog}}'
-          env_variable: '${{env.env_variable}}'
-          Uploadfilechk: '${{env.Uploadfilechk}}'
           inputstartfile: '${{env.inputstartfile}}'
