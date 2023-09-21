@@ -1,0 +1,28 @@
+name: Github-Action-Demo
+env:
+  apikey: "38e53fd821771b102b5bfddc"
+  apisecret: "c9fb4b4be583657d952d3d25103b28590811e7b0f43bf8d7d9107b6345ae752f15a21d50"
+  testid: "13033948"
+  ContinuePipeline: "false"
+  showtaillog: "false"
+   
+on: push
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest  
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.3.4
+    - name: Run Blazemeter test
+      uses: BlazeRunner-BZR/Github-Action@v3
+      id: run-test
+      with:
+        apikey: ${{env.apikey}}
+        apisecret: ${{env.apisecret}}
+        testid: ${{env.testid}}
+        ContinuePipeline: ${{env.ContinuePipeline}}
+        showtaillog: ${{env.showtaillog}} 
+        env_variable: ${{env.env_variable}}
+        Uploadfilechk: ${{env.Uploadfilechk}}
+        inputstartfile: ${{env.inputstartfile}}
