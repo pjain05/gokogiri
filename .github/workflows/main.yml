@@ -6,6 +6,7 @@ env:
   ContinuePipeline: 'false'
   showtaillog: 'false'
   inputstartfile: "abc.txt"
+  webhookURLSlack: "https://hooks.slack.com/services/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"
 
 'on': push
 jobs:
@@ -13,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Blazemeter test
-        uses: BlazeRunner-BZR/Github-Action@v8.1
+        uses: dnyanesh-nagre-perforce/blaze-action@v1.1
         id: run-test
         with:
           apikey: '${{env.apikey}}'
@@ -22,3 +23,4 @@ jobs:
           ContinuePipeline: '${{env.ContinuePipeline}}'
           showtaillog: '${{env.showtaillog}}'
           inputstartfile: '${{env.inputstartfile}}'
+          webhookURLSlack: '${{env.webhookURLSlack}}'
